@@ -3,41 +3,27 @@
 
 typedef struct{
 	int matricula;
-	char nome[30];
-	
+	double nota;
 }PESSOA;
 
 
-int main (void)
-{
-	PESSOA aluno[100]; // variavel instanciada do tipo PESSOA
-	
+int main (void){
 	int i, estudantes;
-	int index = 0;
+	
+	PESSOA aluno[estudantes]; //Array de alunos
 	
 	printf("Informe o número de estudantes:");
 	scanf("%i",&estudantes);
-	
-	for (i = 0 ; i < estudantes ; i ++)
-	
-	{
-			
+	//Entrada de dados
+	for (i = 0 ; i < estudantes ; i ++){
 		printf("infome nome ");
-		scanf("%s", &aluno[index].nome); // gets(nome);
+		scanf("%s", &aluno[i].matricula); // gets(matricula);
 	
 		printf("infome Matricula ");
-		scanf("%i", &aluno[index].matricula); // gets(nome);
-		
-		index ++;
-				
-	
+		scanf("%lf", &aluno[i].nota); // gets(nota);
 	}
 	
-	
-	
-	
-	printf("%i %s",aluno[1].matricula,aluno[1].nome);
-	
+	printf("%i %lf",aluno[1].matricula,aluno[1].nota);
 }
 
 
