@@ -1,30 +1,25 @@
-#include <stdio.h> 
-//#include <string.h>
-
-typedef struct{
-	int matricula;
-	double nota;
-}PESSOA;
-
-
-int main (void){
-	int i, estudantes;
-	
-	PESSOA aluno[estudantes]; //Array de alunos
-	
-	printf("Informe o número de estudantes:");
-	scanf("%i",&estudantes);
-	//Entrada de dados
+#include <stdio.h>
+int main (){
+	int i, matraux = 0, estudantes;
+	float naux;
+	scanf("%d",&estudantes);
+	int matricula[estudantes];
+	float nota[estudantes];
 	for (i = 0 ; i < estudantes ; i ++){
-		printf("infome nome ");
-		scanf("%s", &aluno[i].matricula); // gets(matricula);
-	
-		printf("infome Matricula ");
-		scanf("%lf", &aluno[i].nota); // gets(nota);
+		scanf("%d %f", &matricula[i], &nota[i]);
 	}
-	
-	printf("%i %lf",aluno[1].matricula,aluno[1].nota);
+	for(i = 0; i < estudantes; i++){
+		if(nota[i] >= 8){
+			if(nota[i] > naux){
+				naux = nota[i];
+				matraux = matricula[i];
+			}
+		}
+	}
+	if(matraux > 0){
+		printf("%d\n", matraux);
+	}else{
+		printf("Minimum note not reached\n");
+	}
+	return 0;
 }
-
-
-
